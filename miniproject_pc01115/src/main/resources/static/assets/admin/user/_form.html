@@ -1,0 +1,67 @@
+<div class="panel panel-default">
+	<div class="panel-heading">CHỈNH SỬA USER</div>
+	<form name="formCust">
+		<div class="panel-body">
+			<div class="row">
+				
+					<div class="col-sm-4 text-center">
+						<label for="photo"> <img
+							ng-src="{{'/assets/images/users/' + form.photo}}"
+							style="max-width: 100%; height: 150px;" />
+						</label>
+					</div>
+					<div class="col-sm-8">
+						<div class="row">
+							<div class="form-group col-sm-6">
+								<div>Tài Khoản</div>
+								<input ng-model="form.username" class="form-control" name="txtUsername" required>			
+	                             <span ng-hide="formCust.txtUsername.$valid">Không được để trống tài khoản</span>
+							</div>
+							<div class="form-group col-sm-6">
+								<div>Họ Tên</div>
+								<input ng-model="form.fullname" class="form-control" name="txtFullname" required>
+								<span ng-hide="formCust.txtFullname.$valid">Không được để trống họ tên</span>
+							</div>
+						</div>
+	
+						<div class="row">
+							<div class="form-group col-sm-6">
+								<div>Mật Khẩu</div>
+								<input type="password" ng-model="form.password" class="form-control" name="txtPassword" required>
+								<span ng-hide="formCust.txtPassword.$valid">Không được để trống mật khẩu</span>	
+							</div>
+							<div class="form-group col-sm-6">
+								<div>Email</div>
+								<input type="email" ng-model="form.email" class="form-control" name="txtEmail" required>															 
+									<span ng-hide="formCust.txtEmail.$valid">Email không hợp lệ</span>
+							</div>
+						</div>
+	
+						<div class="row">
+							<div class="form-group col-sm-6">
+								<div>Hình</div>
+								<input type="file" class="form-control" id="photo"
+									onchange="angular.element(this).scope().imageChanged(this.files)">
+							</div>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+	
+		<div class="panel-footer text-center">
+			<button ng-disabled="!formCust.$valid" ng-click="create()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-plus"></b> Thêm
+			</button>
+			<button ng-disabled="!formCust.$valid" ng-click="update()" class="btn btn-success">
+				<b class="glyphicon glyphicon-save"></b> Cập Nhật
+			</button>
+			<button ng-disabled="!formCust.$valid" ng-click="delete(form)" class="btn btn-danger">
+				<b class="glyphicon glyphicon-trash"></b> Xóa
+			</button>
+			<button ng-click="reset()" class="btn btn-info">
+				<b class="glyphicon glyphicon-refresh"></b> Làm Mới
+			</button>
+		</div>
+	</form>
+</div>

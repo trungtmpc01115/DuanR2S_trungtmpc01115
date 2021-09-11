@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+   	<link href="/assets/login/css/login.css" rel="stylesheet"/>
+    
+    <title>Đăng nhập</title>
+</head>
+<body class="bg-image" ng-app="login-app" ng-controller="login-ctrl">
+    <div class="panel panel-primary panel-login">
+        <div class="panel-body">
+            <form name="formLogin" action="/security/login" method="post">
+                <div class="text-center"><img src="/assets/login/image/login.png" height="120px"></div>
+                <div class="panel-heading text-center text-primary"><h4>Đăng Nhập</h4></div>
+                <div class="magin-bottom-15">
+                    <div class="input-group" >
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input ng-model="user" id="email" type="text" class="form-control"  placeholder="Tài khoản" name="username" required>
+                    </div>
+                    <span class="color-red" ng-hide="formLogin.username.$valid" >Bạn chưa nhập tài khoản</span>
+                 </div>
+                <div class="magin-bottom-15">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input ng-model="pass" id="email" type="password" class="form-control"  placeholder="Mật khẩu"  name="password" required>                    
+                    </div>
+                    <span class="color-red" ng-hide="formLogin.password.$valid">Bạn chưa nhập mật khẩu</span>
+                </div>
+                <i class="pull-left color-red magin-bottom-15" th:text="${message}"></i>
+                <button ng-disabled="!formLogin.$valid" class="btn btn-primary button-login">Đăng nhập</button>
+            </form>
+        </div>      
+    </div>    
+
+    <script src="/assets/login/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+	<div class="panel-heading">CHỈNH SỬA ROLE</div>
+	<form name="formCate">
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-sm-4 text-center"></div>						
+				<div class="col-sm-8">
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<div>Id</div>
+							<input ng-model="form.id" class="form-control" name="txtId" required>
+							<span ng-hide="formCate.txtId.$valid">Không được để trống Id</span>
+						</div>					
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<div>Tên</div>
+							<input ng-model="form.name" class="form-control" name="txtName" required>
+							<span ng-hide="formCate.txtName.$valid">Không được để trống tên</span>
+						</div>
+					</div>				
+				</div>
+			</div>
+		</div>
+		<div class="panel-footer text-center">
+			<button ng-disabled="!formCate.$valid" ng-click="create()" class="btn btn-primary">
+				<b class="glyphicon glyphicon-plus"></b> Thêm
+			</button>
+			<button ng-disabled="!formCate.$valid" ng-click="update()" class="btn btn-success">
+				<b class="glyphicon glyphicon-save"></b> Cập Nhật
+			</button>
+			<button ng-disabled="!formCate.$valid" ng-click="delete(form)" class="btn btn-danger">
+				<b class="glyphicon glyphicon-trash"></b> Xóa
+			</button>
+			<button ng-click="reset()" class="btn btn-info">
+				<b class="glyphicon glyphicon-refresh"></b> Làm Mới
+			</button>
+	
+		</div>
+	</form>
+</div>

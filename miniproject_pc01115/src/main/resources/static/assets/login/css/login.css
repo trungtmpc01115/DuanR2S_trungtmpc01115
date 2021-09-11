@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+
+.bg-image {
+	background-image: url('/assets/login/image/anhnen.jpg');
+}
+
+.color-red {
+	color: red;
+}
+
+.magin-bottom-15 {
+	margin-bottom: 15px;
+}
+
+.panel-login {
+	margin-top: 140px;
+	margin-left: 500px;
+	margin-right: 500px;
+}
+
+.button-login {
+	width: 100%;
+}
